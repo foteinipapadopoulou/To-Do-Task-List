@@ -16,14 +16,15 @@
                             <h1>My To Do List</h1>
                         </span>
                         <form id="task-form">
-                            <div class="input-group py-2">
-                                <input type="text" style="font-family:Arial, FontAwesome !important" 
-                                name="task" id="task" class="px-3 py-2 align-self-center flex-grow-1" placeholder="&#xf044; Add a new task">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit" id="add-task">
-                                        <i class="fa fa-solid fa-plus"></i>
+                            <div class="input-group my-2 d-inline-flex flex-row flex-nowrap">
+                                    <input type="text" name="task" id="task" 
+                                    class="fontAwesomeicons px-3 py-2 flex-grow-1 border-right-0" placeholder="&#xf044; Add a new task">
+
+                                <span class="input-group-append">
+                                    <button type="reset" class="btn btn-reset border-left-0" id="resetTask"><i class="fa fa-times-circle"></i></button>
+                                    <button type="submit" class="btn btn-primary fa fa-solid fa-plus" id="add-task">
                                     </button>
-                                </div>
+                                </span>
                             </div>
                             
                         </form>

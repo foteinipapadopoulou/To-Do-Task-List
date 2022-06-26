@@ -4,6 +4,7 @@ const taskList = document.querySelector(".collection");
 const clearBtn = document.querySelector(".clear-tasks");
 const filter = document.querySelector("#filter");
 const taskInput = document.querySelector("#task");
+const resetTask = document.querySelector("#resetTask > i"); 
 
 loadEventListeners();
 function loadEventListeners(){
@@ -12,6 +13,8 @@ function loadEventListeners(){
     taskList.addEventListener("click", removeTask);
     clearBtn.addEventListener("click", clearTasks);
     filter.addEventListener("keyup", filterTasks);
+    taskInput.addEventListener("keyup", clearTaskInput);
+    resetTask.addEventListener("click", resetTaskInput );
 }   
 
 function getTasks(){
@@ -36,6 +39,7 @@ function getTasks(){
 function addTask(e){
     if(taskInput.value === ''){
         alert('Add a task');
+        return;
     }
     const li = document.createElement('li');
     li.className = 'collection-item';
@@ -45,6 +49,7 @@ function addTask(e){
     link.innerHTML = "<i class='fa fa-remove'></i>";
     li.appendChild(link);
     taskList.appendChild(li);
+    resetTask.style.visibility = "hidden";
     storeTaskInLocalStorage(taskInput.value);
     taskInput.value = '';
     e.preventDefault();
@@ -113,4 +118,17 @@ function storeTaskInLocalStorage(task){
     tasks.push(task);
     localStorage.setItem("tasks",JSON.stringify(tasks));
 
+}
+
+function clearTaskInput(task){
+    if (task == 0){
+        resetTask.style.visibility = "hidden";
+    } else {
+        resetTask.style.visibility = "visible";
+    }
+}
+
+function resetTaskInput(){
+    resetTask.style.visibility = "hidden";
+    taskInput.focus();
 }
