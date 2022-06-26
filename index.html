@@ -4,44 +4,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task List</title>
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body>
-    <div class="container">
+<body class="bg-gradient">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col s12">
-                <div id="main" class="card">
-                    <div class="card-content">
-                        <span class="card-title">Task List</span>
-                        <div class="row">
-                            <form id="task-form">
-                                <div class="input-field col s12">
-                                    <input type="text" name="task" id="task">
-                                    <label for="task">New Task</label>
-                                    <input type="submit" value="Add Task" class="btn">
+            <div class="col-md-6 mx-auto">
+                <div id="main" class="card card-body box-shadow px-5">
+                        <span class="card-title text-title text-center col-12">
+                            <h1>My To Do List</h1>
+                        </span>
+                        <form id="task-form">
+                            <div class="input-group py-2">
+                                <input type="text" style="font-family:Arial, FontAwesome !important" 
+                                name="task" id="task" class="px-3 py-2 align-self-center flex-grow-1" placeholder="&#xf044; Add a new task">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit" id="add-task">
+                                        <i class="fa fa-solid fa-plus"></i>
+                                    </button>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="card-action">
+                            </div>
+                            
+                        </form>
                         <h5 id="task-title">Tasks</h5>
                         <div class="input-field col s12">
                             <input type="text" name="filter" id="filter">
                             <label for="filter">Filter Tasks</label>
                         </div>
-                        <a href="#" class="clear-tasks btn black">Clear Tasks</a>
+                        <a href="#" class="btn btn-primary clear-tasks">Clear Tasks</a>
                         <ul class="collection">
-                            </ul>
-                    </div>
+                        </ul>
                 </div>
             </div>
         </div>
     </div>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/790f41939f.js"></script>
     <script src="app.js"></script>
 </body>

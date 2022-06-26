@@ -1,0 +1,57 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+:root{
+    --bg-color: #d5d7de;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 1.4em;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.box-shadow{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.bg-gradient{
+    background: rgb(21,0,50);
+    background: linear-gradient(121deg, rgba(21,0,50,1) 0%, rgba(104,70,218,1) 35%, rgba(64,216,255,1) 100%);
+}
+
+#task{
+    font-size:18px;
+    border-radius:3px;
+    border: 2px solid #999;
+    outline: none;
+    height: 40px;
+    min-width: 10px;
+}
+
+#task:focus,
+#task:active{
+    border:2px solid #3c87FF;
+}
+
+#add-task{
+    font-size:18px;
+    border-radius:50%;
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+}
+
+#task-form{
+    display: inline-flex;
+}
