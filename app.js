@@ -1,10 +1,11 @@
 // Define Ui vars
 const form = document.querySelector("#task-form");
-const taskList = document.querySelector(".collection");
+const taskList = document.querySelector(".task-list");
 const clearBtn = document.querySelector(".clear-tasks");
 const filter = document.querySelector("#filter");
+const filterBtn = document.querySelector("#filterBtn");
 const taskInput = document.querySelector("#task");
-const resetTask = document.querySelector("#resetTask > i"); 
+const resetTask = document.querySelector("#resetTaskButton"); 
 
 loadEventListeners();
 function loadEventListeners(){
@@ -12,7 +13,7 @@ function loadEventListeners(){
     form.addEventListener("submit", addTask);
     taskList.addEventListener("click", removeTask);
     clearBtn.addEventListener("click", clearTasks);
-    filter.addEventListener("keyup", filterTasks);
+    filterBtn.addEventListener("click", filterTasks);
     taskInput.addEventListener("keyup", clearTaskInput);
     resetTask.addEventListener("click", resetTaskInput );
 }   
@@ -26,15 +27,16 @@ function getTasks(){
     }
     tasks.forEach(function(task){
         const li = document.createElement('li');
-        li.className = 'collection-item';
+        li.className = 'task-list-item';
         li.appendChild(document.createTextNode(task));
         const link = document.createElement("a");
         link.className = "delete-item secondary-content";
-        link.innerHTML = "<i class='fa fa-remove'></i>";
+        link.innerHTML = "<i class='fa fa-ellipsis-vertical'></i>";
         li.appendChild(link);
         taskList.appendChild(li);
     });
 }
+
 
 function addTask(e){
     if(taskInput.value === ''){
@@ -42,11 +44,11 @@ function addTask(e){
         return;
     }
     const li = document.createElement('li');
-    li.className = 'collection-item';
+    li.className = 'task-list-item';
     li.appendChild(document.createTextNode(taskInput.value));
     const link = document.createElement("a");
     link.className = "delete-item secondary-content";
-    link.innerHTML = "<i class='fa fa-remove'></i>";
+    link.innerHTML = "<i class='fa-solid fa-ellipsis-vertical'></i>";
     li.appendChild(link);
     taskList.appendChild(li);
     resetTask.style.visibility = "hidden";
@@ -92,9 +94,9 @@ function clearTasksFromLocalStorage(){
 } 
 
 function filterTasks(e){
-    const text = e.target.value.toLowerCase();
+    const text = filter.value.toLowerCase();
     console.log(text);
-    document.querySelectorAll('.collection-item').forEach(
+    document.querySelectorAll('.task-list-item').forEach(
         function(task){
             const item = task.firstChild.textContent;
             if(item.toLowerCase().indexOf(text) != -1){
@@ -122,13 +124,12 @@ function storeTaskInLocalStorage(task){
 
 function clearTaskInput(task){
     if (task == 0){
-        resetTask.style.visibility = "hidden";
+        resetTask.style.display = "none";
     } else {
-        resetTask.style.visibility = "visible";
+        resetTask.style.display = "inline";
     }
 }
 
 function resetTaskInput(){
-    resetTask.style.visibility = "hidden";
-    taskInput.focus();
+    resetTask.style.display = "none";
 }

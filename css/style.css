@@ -1,11 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 
-:root{
-    --bg-color: #d5d7de;
-}
-
-* {
+html,body {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     line-height: 1.4em;
@@ -32,7 +28,6 @@ body {
 
 #task{
     font-size:18px;
-    border: none;
     border: 2px solid #999;
     outline: none;
     height: 40px;
@@ -43,37 +38,71 @@ body {
     border-bottom-right-radius: 0px;
 }
 
-#task:focus,
-#task:active{
-    /* border:2px solid #3c87FF; */
+.border-radius-right{
+    border-top-left-radius: 0px ;
+    border-bottom-left-radius: 0px ;
+    border-top-right-radius: 5px ;
+    border-bottom-right-radius: 5px ;
+}
+
+.border-radius-left{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #add-task{
-    font-size:18px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    font-size:20px;
+    max-height: inherit;
+}   
+
+#filter{
+    outline: none;
+    font-size:14px;
+    border: 1px solid #999;
+    min-width: 10px;
 }
 
-.fontAwesomeicons{
+
+.fontAwesomeicons,.fa,.fas{
     font-family:Arial, FontAwesome !important;
 }
 
 #resetTask{
     border: 2px solid #999;
-    border-radius: 0px;
+    border-radius: 2px;
 }
-
-#resetTask>i{
-    visibility: hidden;
+#resetTaskButton{
     outline: none;
     box-shadow:none;
+    display: none;
+}
+
+.clear-tasks.active{
+    opacity: 0.9;
+    pointer-events: auto;
+}
+
+.clear-tasks:active{
+    transform: scale(0.93);
 }
 
 .btn:focus,.btn:active:focus,.btn.active:focus,
 .btn.focus,.btn:active.focus,.btn.active.focus,
-#resetTask>i:focus,#resetTask>i:active {
+#resetTask>i:hover,#resetTask>i:focus,#resetTask>i:active {
     outline: none;
     box-shadow:none;
+}
+
+.task-list .task-list-item {
+    list-style: none;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
