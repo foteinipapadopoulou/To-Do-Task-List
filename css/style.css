@@ -100,9 +100,35 @@ body {
 }
 
 /* Change the white to any color */
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
+input[type="text"]:-webkit-autofill,
+input[type="text"]:-webkit-autofill:hover, 
+input[type="text"]:-webkit-autofill:focus, 
+input[type="text"]:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input[type="checkbox"]:focus{
+    outline: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+input[type=checkbox]{
+    background-color: #DDD;
+    border-radius: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+}
+
+input[type=checkbox]:checked {
+    background-color: #007bff;
+    background: #007bff url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
+}
+
+.delete-item>.fa-trash-can{
+    cursor:pointer;
 }

@@ -27,16 +27,40 @@ function getTasks(){
     }
     tasks.forEach(function(task){
         const li = document.createElement('li');
-        li.className = 'task-list-item';
-        li.appendChild(document.createTextNode(task));
-        const link = document.createElement("a");
-        link.className = "delete-item secondary-content";
-        link.innerHTML = "<i class='fa fa-ellipsis-vertical'></i>";
+        li.className = 'task-list-item d-flex flex-row align-items-center mt-2';
+        //create checkbox element
+        const inputCheckbox = createCheckbox();
+        li.appendChild(inputCheckbox);
+        //add task label
+        const textTask = createTaskLabel(task);
+        li.appendChild(textTask);
+        // add trash can button
+        const link = createTrashCanButton();
         li.appendChild(link);
         taskList.appendChild(li);
     });
 }
 
+function createTrashCanButton() {
+    const link = document.createElement("a");
+    link.className = "delete-item secondary-content ml-auto pt-1";
+    link.innerHTML = "<i class='fa-solid fa-trash-can'></i>";
+    return link;
+}
+
+function createCheckbox() {
+    const inputCheckbox = document.createElement("input");
+    inputCheckbox.type = "checkbox";
+    inputCheckbox.className = 'mr-2';
+    return inputCheckbox;
+}
+
+function createTaskLabel(value){
+    const textTask = document.createElement("label");
+    textTask.className = "mb-0";
+    textTask.innerHTML = value;
+    return textTask;
+}
 
 function addTask(e){
     if(taskInput.value === ''){
@@ -44,11 +68,15 @@ function addTask(e){
         return;
     }
     const li = document.createElement('li');
-    li.className = 'task-list-item';
-    li.appendChild(document.createTextNode(taskInput.value));
-    const link = document.createElement("a");
-    link.className = "delete-item secondary-content";
-    link.innerHTML = "<i class='fa-solid fa-ellipsis-vertical'></i>";
+    li.className = 'task-list-item d-flex flex-row align-items-center mt-2';
+    //create checkbox element
+    const inputCheckbox = createCheckbox();
+    li.appendChild(inputCheckbox);
+    //add task label
+    const textTask = createTaskLabel(taskInput.value);
+    li.appendChild(textTask);
+    //add trash button
+    const link = createTrashCanButton();
     li.appendChild(link);
     taskList.appendChild(li);
     resetTask.style.visibility = "hidden";
