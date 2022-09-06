@@ -5,7 +5,8 @@ const clearBtn = document.querySelector(".clear-tasks");
 const filter = document.querySelector("#filter");
 const filterBtn = document.querySelector("#filterBtn");
 const taskInput = document.querySelector("#task");
-const resetTask = document.querySelector("#resetTaskButton"); 
+const resetTask = document.querySelector("#resetTaskButton");
+const checkTask = document.querySelector(".task-list")
 
 loadEventListeners();
 function loadEventListeners(){
@@ -43,7 +44,7 @@ function getTasks(){
 
 function createTrashCanButton() {
     const link = document.createElement("a");
-    link.className = "delete-item secondary-content ml-auto pt-1";
+    link.className = "delete-item secondary-content ml-auto mt-1";
     link.innerHTML = "<i class='fa-solid fa-trash-can'></i>";
     return link;
 }
@@ -68,7 +69,7 @@ function addTask(e){
         return;
     }
     const li = document.createElement('li');
-    li.className = 'task-list-item d-flex flex-row align-items-center mt-2';
+    li.className = 'task-list-item d-flex flex-row align-items-center mt-1';
     //create checkbox element
     const inputCheckbox = createCheckbox();
     li.appendChild(inputCheckbox);

@@ -17,7 +17,7 @@
                         </span>
                         <form id="task-form">
                             <div class="input-group my-2 d-inline-flex flex-row flex-nowrap">
-                                    <input type="text" name="task" id="task" 
+                                <input type="text" name="task" id="task"
                                     class="px-3 py-2 flex-grow-1 border-right-0 " placeholder="&#x270E; Add a new task">
                                 <span class="input-group-append">
                                     <div class="d-flex border-left-0 border-right-0" id="resetTask">
@@ -33,17 +33,15 @@
                         </form>
                         <h5 id="task-title">Tasks</h5>
                         <div class="input-group my-2 d-inline-flex flex-row flex-nowrap">
-                            <input type="text" name="filter" id="filter" class="px-2 py-1 fontAwesomeicons border-radius-left border-right-0" placeholder="Search">
+                            <input type="text" name="filter" id="filter" class="px-2 py-1 fontAwesomeicons border-radius-left" placeholder="Search">
                             <span class="input-group-append">
-                                <button class="btn btn-secondary btn-sm border-radius-right" for="filter" id="filterBtn"><i class="fa fa-search"></i></label>
+                                <button type="submit" class="btn btn-secondary btn-sm rounded-right" for="filter" id="filterBtn"><i class="fa fa-search"></i></button>
                             </span>
+                            <div class="mt-2 ml-auto">
+                                <a href="#" role="button" class="btn btn-primary btn-sm clear-tasks ml-auto">Clear Tasks</a>
+                            </div>
                         </div>
-                        <div class="mt-2 d-flex flex-row justify-content-between flex-wrap">
-                            <span class="ml-1 mb-0 mr-4">All</span>
-                            <span  class="mb-0 mr-4">Pending</span>
-                            <span  class="mb-0 mr-1">Completed</span>
-                            <a href="#" role="button" class="btn btn-primary btn-sm clear-tasks ml-auto">Clear Tasks</a>
-                        </div>
+                        
                         <ul class="task-list pl-2">
                            
                         </ul>
