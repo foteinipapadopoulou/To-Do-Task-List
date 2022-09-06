@@ -123,14 +123,13 @@ function clearTasksFromLocalStorage(){
 
 function filterTasks(e){
     const text = filter.value.toLowerCase();
-    console.log(text);
     document.querySelectorAll('.task-list-item').forEach(
         function(task){
-            const item = task.firstChild.textContent;
+            const item = task.querySelector('label').textContent;
             if(item.toLowerCase().indexOf(text) != -1){
                 task.style.display = 'block';
             } else {
-                task.style.display = 'none';
+                task.style.setProperty("display","none","important");
             }
         }
     );
