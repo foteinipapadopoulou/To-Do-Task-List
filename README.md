@@ -13,6 +13,7 @@ You can add you own tasks that need to be done by *typing* the title and then cl
 Then you can see all your tasks and click the tick box when it's done.
 Also a delete button had been added so you can remove your task. 
 There is also a search bar where you can search your tasks.
+
 ![Screenshot](README/screenshot.png)
 
 ### Contributing
